@@ -86,7 +86,6 @@ export default {
         }
         pages[page].push(item);
       });
-      console.log("计算属性被调用");
       return pages;
     }
   }

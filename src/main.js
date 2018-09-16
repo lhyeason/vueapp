@@ -6,10 +6,12 @@ import router from './router'
 import './assets/styles/iconfont.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+// import axios from "axios";
 
 
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)
+// Vue.use(axios)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

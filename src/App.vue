@@ -14,6 +14,7 @@ import homeswiper from "./components/swiper";
 import icons from "./components/icons";
 import recommend from "./components/recommend";
 import weekend from "./components/weekend";
+import axios from "axios";
 export default {
   name: "App",
   components: {
@@ -22,6 +23,16 @@ export default {
     icons,
     recommend,
     weekend
+  },
+  methods: {
+    getHomeInfo() {
+      axios.get("./api/index.json").then(response => {
+        console.log(response);
+      });
+    }
+  },
+  mounted() {
+    this.getHomeInfo();
   }
 };
 </script>

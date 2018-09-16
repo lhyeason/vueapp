@@ -2,7 +2,7 @@
    <div>
         <div class="recommend-title">周末去哪儿</div>
         <ul>
-            <li class="item" v-for="(item,index) of items" :key="index">
+            <li class="item" v-for="(item,index) of itemsWeek " :key="index">
                 <div class="item-img-wrapper ">
                     <img :src="item.url" class="item-img">
                 </div>
@@ -21,7 +21,7 @@ export default {
   name: "weekend",
   data: function() {
     return {
-      items: [
+      itemsWeek: [
         {
           title: "常德桃花源",
           comment: "1120条评论",
