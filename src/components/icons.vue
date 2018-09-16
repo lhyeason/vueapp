@@ -66,12 +66,12 @@ export default {
             "http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png",
           title: "动植物园"
         },
-        {
-          id: "09",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png",
-          title: "动植物园"
-        }
+        // {
+        //   id: "09",
+        //   imgUrl:
+        //     "http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png",
+        //   title: "动植物园"
+        // }
       ]
     };
   },
@@ -86,6 +86,7 @@ export default {
         }
         pages[page].push(item);
       });
+      console.log("计算属性被调用");
       return pages;
     }
   }
@@ -98,6 +99,7 @@ export default {
   padding-bottom: 25%;
   height: 0px;
   color: #333;
+  margin-bottom: 15px;
 }
 .icon {
   width: 25%;
