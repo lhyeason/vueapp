@@ -2,10 +2,9 @@
     <div class="wripper">
         <swiper :options="swiperOption">
             <!-- slides -->
-
             <swiper-slide v-for="item of swiperList" :key="item.id">
                 <img class="swiper-img" :src="item.imgUrl">
-                </swiper-slide>
+            </swiper-slide>
             <!-- Optional controls -->
             <div class="swiper-pagination" slot="pagination"> </div>
             <!-- <div class="swiper-button-prev" slot="button-prev"></div>
