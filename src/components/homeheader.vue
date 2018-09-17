@@ -4,8 +4,11 @@
           <span class="iconfont ">&#xe624;</span>
         </div>
         <div class="header-input"><span class="iconfont">&#xe632;</span>输入景点/城市/游玩主题 </div>
-        <div class="header-right">{{city}} <span class="iconfont">&#xe64a;</span></div>
+        <router-link to="/hello"> 
+          <div class="header-right"  @click="jumpToHello">{{this.city}} <span class="iconfont">&#xe64a;</span></div>
+        </router-link>
    </div>
+  
 </template>
 
 <script type="text/ecmascript-6">
@@ -16,6 +19,12 @@ export default {
   components: {},
   props: {
     city: String
+  },
+  methods: {
+    jumpToHello() {
+      console.log("click !!!");
+      this.$router.push({ path: "hello" });
+    }
   }
 };
 </script>
@@ -50,6 +59,7 @@ export default {
     float: right;
     width: 80px;
     cursor: pointer;
+    color: #fff;
   }
 }
 </style>

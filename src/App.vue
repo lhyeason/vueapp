@@ -1,43 +1,17 @@
 <template>
   <div id="app">
-    <homeheader :city="ajaxData.city"></homeheader>
-    <homeswiper :swiperList="ajaxData.swiperList"></homeswiper>
-    <icons :iconList="ajaxData.iconList"></icons>
-    <recommend :items="ajaxData.items"></recommend>
-    <weekend :itemsWeek="ajaxData.itemsWeek"></weekend>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
 <script>
-import homeheader from "./components/homeheader";
-import homeswiper from "./components/swiper";
-import icons from "./components/icons";
-import recommend from "./components/recommend";
-import weekend from "./components/weekend";
-import axios from "axios";
 export default {
   name: "App",
-  components: {
-    homeheader,
-    homeswiper,
-    icons,
-    recommend,
-    weekend
-  },
+  components: {},
   data: function() {
-    return {
-      ajaxData: ""
-    };
-  },
-  methods: {
-    getHomeInfo() {
-      axios.get("./api/index.json").then(response => {
-        this.ajaxData = response.data;
-      });
-    }
-  },
-  mounted() {
-    this.getHomeInfo();
+    return {};
   }
 };
 </script>
