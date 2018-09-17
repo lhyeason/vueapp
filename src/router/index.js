@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import App from '../App'
-import hello from '../components/hello'
+import city from '../components/city/city'
 import home from '../components/home'
 Vue.use(Router)
 
@@ -12,8 +12,8 @@ export default new Router({
     component: home,
     name: "Home"
   }, {
-    path: "/hello",
-    component: hello,
-    name: "Hello"
+    path: "/city",
+    component: city,
+    name: "City"
   }]
 })

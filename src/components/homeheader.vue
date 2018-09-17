@@ -4,7 +4,7 @@
           <span class="iconfont ">&#xe624;</span>
         </div>
         <div class="header-input"><span class="iconfont">&#xe632;</span>输入景点/城市/游玩主题 </div>
-        <router-link to="/hello"> 
+        <router-link to="/city"> 
           <div class="header-right"  @click="jumpToHello">{{this.city}} <span class="iconfont">&#xe64a;</span></div>
         </router-link>
    </div>
