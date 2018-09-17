@@ -1,9 +1,9 @@
 <template>
    <div class="city-header">
-       <router-link to="/">
+        城市选择  
+        <router-link to="/">
         <span class="iconfont header-back">&#xe624;</span> 
        </router-link>
-        城市选择  
    </div>
 </template>
 
@@ -21,16 +21,20 @@ export default {
   width: 100%;
   text-align: center;
   background: #00bcd4;
-  height: 64px;
-  line-height: 64px;
+  height: 40px;
+  line-height: 40px;
   font-size: 16px;
   color: #fff;
+  position: relative;
 }
 .header-back {
   width: 40px;
   text-align: center;
   font-size: 20px;
   float: left;
-  color: #fff
+  color: #fff;
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
 </style>
