@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <homeheader></homeheader>
+    <homeheader :city="a"></homeheader>
     <homeswiper></homeswiper>
     <icons></icons>
     <recommend></recommend>
@@ -24,10 +24,16 @@ export default {
     recommend,
     weekend
   },
+  data: function() {
+    return {
+      ajaxData: ""
+    };
+  },
   methods: {
     getHomeInfo() {
       axios.get("./api/index.json").then(response => {
-        console.log(response);
+        this.ajaxData = JSON.parse(this.response);
+        console.log(this.ajaxData);
       });
     }
   },
