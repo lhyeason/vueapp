@@ -3,6 +3,7 @@
         <cityheader></cityheader>
         <citysearch></citysearch>
         <citylist></citylist>
+        <cityalphabet></cityalphabet>
    </div>
 </template>
 
@@ -10,6 +11,7 @@
 import cityheader from "./components/header";
 import citysearch from "./components/search";
 import citylist from "./components/list";
+import cityalphabet from "./components/alphabet";
 export default {
   name: "City",
   data: function() {
@@ -18,7 +20,8 @@ export default {
   components: {
     cityheader,
     citysearch,
-    citylist
+    citylist,
+    cityalphabet
   }
 };
 </script>
