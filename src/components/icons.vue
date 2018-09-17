@@ -1,6 +1,6 @@
 <template>
    <div class="icons">
-        <swiper>
+        <swiper v-if="showIconList" :options="swiperOption">
             <swiper-slide v-for="(page,index) of pages" :key="index">
             <div class="icon" v-for="item of page" :key="item.id">
                 <div class="icon-img">
@@ -15,64 +15,14 @@
 
 <script type="text/ecmascript-6">
 export default {
+  props: {
+    iconList: Array
+  },
   data: function() {
     return {
-      iconList: [
-        {
-          id: "01",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          title: "景点门票"
-        },
-        {
-          id: "02",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/6a/45f595250c73d102.png",
-          title: "滑雪季"
-        },
-        {
-          id: "03",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
-          title: "自然风光"
-        },
-        {
-          id: "04",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png",
-          title: "动植物园"
-        },
-        {
-          id: "05",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          title: "景点门票"
-        },
-        {
-          id: "06",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/6a/45f595250c73d102.png",
-          title: "滑雪季"
-        },
-        {
-          id: "07",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
-          title: "自然风光"
-        },
-        {
-          id: "08",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png",
-          title: "动植物园"
-        },
-        // {
-        //   id: "09",
-        //   imgUrl:
-        //     "http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png",
-        //   title: "动植物园"
-        // }
-      ]
+      swiperOption: {
+        pagination: ".swiper-pagination"
+      }
     };
   },
   components: {},
@@ -87,6 +37,9 @@ export default {
         pages[page].push(item);
       });
       return pages;
+    },
+    showIconList() {
+      return this.iconList;
     }
   }
 };

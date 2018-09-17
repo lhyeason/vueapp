@@ -19,37 +19,18 @@
 <script type="text/ecmascript-6">
 export default {
   name: "weekend",
-  data: function() {
-    return {
-      itemsWeek: [
-        {
-          title: "常德桃花源",
-          comment: "1120条评论",
-          url:
-            "http://img1.qunarzz.com/sight/source/1505/ae/11f076c6cb7c47.jpg_r_640x214_6f643489.jpg"
-        },
-        {
-          title: "彭山旅游度假区",
-          comment: "9条评论",
-          url:
-            "http://img1.qunarzz.com/sight/source/1505/fb/302620ed8350f8.jpg_r_640x214_25a07cb4.jpg"
-        },
-        {
-          title: "稻野寻湘景区",
-          comment: "120条评论",
-          url:
-            "http://img1.qunarzz.com/sight/source/1603/56/33894ef918e1a8.jpg_r_640x214_a9de6b4e.jpg"
-        },
-        {
-          title: "枫林花海",
-          comment: "79条评论",
-          url:
-            "http://img1.qunarzz.com/sight/source/1505/39/d61194f054f1f4.jpg_r_640x214_03da9c61.jpg"
-        }
-      ]
-    };
+  props: {
+    itemsWeek: Array
   },
-  components: {}
+  data: function() {
+    return {};
+  },
+  components: {},
+  methods: {
+    mounted() {
+      console.log(this.itemsWeek+"aaaaaaaaaaaaaaaaaaaaa");
+    }
+  }
 };
 </script>
 

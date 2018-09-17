@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <homeheader :city="a"></homeheader>
-    <homeswiper></homeswiper>
-    <icons></icons>
-    <recommend></recommend>
-    <weekend></weekend>
+    <homeheader :city="ajaxData.city"></homeheader>
+    <homeswiper :swiperList="ajaxData.swiperList"></homeswiper>
+    <icons :iconList="ajaxData.iconList"></icons>
+    <recommend :items="ajaxData.items"></recommend>
+    <weekend :itemsWeek="ajaxData.itemsWeek"></weekend>
   </div>
 </template>
 
@@ -32,8 +32,7 @@ export default {
   methods: {
     getHomeInfo() {
       axios.get("./api/index.json").then(response => {
-        this.ajaxData = JSON.parse(this.response);
-        console.log(this.ajaxData);
+        this.ajaxData = response.data;
       });
     }
   },
