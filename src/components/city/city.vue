@@ -2,12 +2,14 @@
    <div>
         <cityheader></cityheader>
         <citysearch></citysearch>
+        <citylist></citylist>
    </div>
 </template>
 
 <script type="text/ecmascript-6">
 import cityheader from "./components/header";
 import citysearch from "./components/search";
+import citylist from "./components/list";
 export default {
   name: "City",
   data: function() {
@@ -15,7 +17,8 @@ export default {
   },
   components: {
     cityheader,
-    citysearch
+    citysearch,
+    citylist
   }
 };
 </script>
