@@ -11,7 +11,9 @@ export default {
   props: ['cityList'],
   data: function() {
     return {
-      state: false
+      state: false,
+      startY: 0,
+      timer: null
     }
   },
   computed: {
@@ -33,18 +35,24 @@ export default {
       this.state = true
     },
     dragMoving(e) {
+      // console.log(this.startY)
       if (this.state) {
-        const startY = this.$refs['A'][0].offsetTop
-        let mouseY = e.clientY
-        let index = Math.floor((mouseY - startY) / 30)
-        // console.log(index)
-        // console.log(this.letters)
-        this.$emit('getLetter', this.letters[index])
+        if (this.timer) {
+          clearTimeout(this.timer)
+        }
+        this.timer = setTimeout(() => {
+          let mouseY = e.clientY - 100
+          let index = Math.floor((mouseY - this.startY) / 30)
+          this.$emit('getLetter', this.letters[index])
+        }, 100)
       }
     },
     dragEnd() {
       this.state = false
     }
+  },
+  updated() {
+    this.startY = this.$refs['A'][0].offsetTop
   }
 }
 </script>
