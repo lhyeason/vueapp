@@ -5,7 +5,7 @@
     </div>
     <div class="search-content" v-show="searchState">
       <ul>
-        <li v-for="item of list" v-text="item" class="result"></li>
+        <li v-for="item of list" v-text="item" class="result" @click="listChangeCity(item)"></li>
       </ul>
     </div>
   </div>
@@ -13,6 +13,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { mapMutations } from 'vuex'
 export default {
   data: function() {
     return {
@@ -48,9 +49,18 @@ export default {
           })
         }
         this.list = result
-        console.log(this.list)
       }, 100)
     }
+  },
+  methods: {
+    listChangeCity(city) {
+      this.changeCity(city)
+      this.list = []
+      this.searchContent = ''
+      this.searchState = false
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeCity'])
   }
 }
 </script>

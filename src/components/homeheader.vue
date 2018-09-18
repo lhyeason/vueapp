@@ -1,32 +1,36 @@
 <template>
-   <div class="header">
-        <div class="header-left">
-          <span class="iconfont ">&#xe624;</span>
-        </div>
-        <div class="header-input"><span class="iconfont">&#xe632;</span>输入景点/城市/游玩主题 </div>
-        <router-link to="/city"> 
-          <div class="header-right"  @click="jumpToHello">{{this.city}} <span class="iconfont">&#xe64a;</span></div>
-        </router-link>
-   </div>
-  
+  <div class="header">
+    <div class="header-left">
+      <span class="iconfont ">&#xe624;</span>
+    </div>
+    <div class="header-input">
+      <span class="iconfont">&#xe632;</span>输入景点/城市/游玩主题 </div>
+    <router-link to="/city">
+      <div class="header-right" @click="jumpToHello">{{this.city}}
+        <span class="iconfont">&#xe64a;</span>
+      </div>
+    </router-link>
+  </div>
+
 </template>
 
 <script type="text/ecmascript-6">
+import { mapState } from 'vuex'
 export default {
   data: function() {
-    return {};
+    return {}
   },
   components: {},
-  props: {
-    city: String
-  },
   methods: {
     jumpToHello() {
-      console.log("click !!!");
-      this.$router.push({ path: "hello" });
+      console.log('click !!!')
+      this.$router.push({ path: 'hello' })
     }
+  },
+  computed: {
+    ...mapState(['city'])
   }
-};
+}
 </script>
 
 <style scoped lang='less'>
@@ -60,6 +64,9 @@ export default {
     width: 80px;
     cursor: pointer;
     color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 </style>

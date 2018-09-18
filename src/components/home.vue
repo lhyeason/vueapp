@@ -1,6 +1,6 @@
 <template>
   <div id="Home">
-    <homeheader :city="ajaxData.city"></homeheader>
+    <homeheader></homeheader>
     <homeswiper :swiperList="ajaxData.swiperList"></homeswiper>
     <icons :iconList="ajaxData.iconList"></icons>
     <recommend :items="ajaxData.items"></recommend>
