@@ -1,32 +1,30 @@
 <template>
-   <div>
-        <div class="recommend-title">热销推荐</div>
-        <ul>
-            <li class="item" v-for="(item,index) of items" :key="index">
-                <img :src="item.url" class="item-img">
-                <div class="item-info">
-                    <p class="item-title" v-text="item.title"></p>
-                    <p class="item-desc" v-text="item.comment"></p>
-                    <button class="item-button">查看详情</button>
-                </div>
-            </li>
-        </ul>
-   </div>
+  <div>
+    <div class="recommend-title">热销推荐</div>
+    <ul>
+      <router-link class="item" v-for="(item,index) of items" :key="index" :to="'/detail/'+item.id" tag="li">
+        <img :src="item.url" class="item-img">
+        <div class="item-info">
+          <p class="item-title" v-text="item.title"></p>
+          <p class="item-desc" v-text="item.comment"></p>
+          <button class="item-button">查看详情</button>
+        </div>
+      </router-link>
+    </ul>
+  </div>
 </template>
 
 <script type="text/ecmascript-6">
 export default {
-  name: "recommend",
-  props:{
-    items:Array
+  name: 'recommend',
+  props: {
+    items: Array
   },
   data: function() {
-    return {
-  
-    };
+    return {}
   },
   components: {}
-};
+}
 </script>
 
 <style scoped type='text/css'>

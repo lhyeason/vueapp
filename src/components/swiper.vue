@@ -1,17 +1,12 @@
 <template>
-    <div class="wripper">
-        <swiper>
-            <!-- slides -->
-            <swiper-slide v-for="item of swiperList" :key="item.id">
-                <img class="swiper-img" :src="item.imgUrl">
-            </swiper-slide>
-            <!-- Optional controls -->
-            <div class="swiper-pagination" slot="pagination"> </div>
-            <!-- <div class="swiper-button-prev" slot="button-prev"></div>
-            <div class="swiper-button-next" slot="button-next"></div> -->
-            <!-- <div class="swiper-scrollbar"   slot="scrollbar"></div> -->
-        </swiper>
-    </div>
+  <div class="wripper">
+    <swiper>
+      <swiper-slide v-for="item of swiperList" :key="item.id">
+        <img class="swiper-img" :src="item.imgUrl">
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"> </div>
+    </swiper>
+  </div>
 </template>
 
 <script type="text/ecmascript-6">
@@ -25,12 +20,11 @@ export default {
       //   // pagination: ".swiper-pagination",
       //   loop: true
       // }
-    };
+    }
   },
   components: {},
-  computed: {
-  }
-};
+  computed: {}
+}
 </script>
 
 <style>

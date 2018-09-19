@@ -7,7 +7,7 @@
       <span class="iconfont">&#xe632;</span>输入景点/城市/游玩主题 </div>
     <router-link to="/city">
       <div class="header-right" @click="jumpToHello">{{this.city}}
-        <span class="iconfont">&#xe64a;</span>
+        <span class="iconfont">&#xe600;</span>
       </div>
     </router-link>
   </div>
