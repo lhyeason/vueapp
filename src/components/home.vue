@@ -9,15 +9,16 @@
 </template>
 
 <script>
-import homeheader from "./homeheader";
-import homeswiper from "./swiper";
-import icons from "./icons";
-import recommend from "./recommend";
-import weekend from "./weekend";
-import axios from "axios";
-import Vue from "vue";
+import homeheader from './homeheader'
+import homeswiper from './swiper'
+import icons from './icons'
+import recommend from './recommend'
+import weekend from './weekend'
+import axios from 'axios'
+import Vue from 'vue'
+import { mapState } from 'vuex'
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     homeheader,
     homeswiper,
@@ -27,20 +28,35 @@ export default {
   },
   data: function() {
     return {
-      ajaxData: ""
-    };
+      ajaxData: '',
+      lastCity: ''
+    }
+  },
+  computed: {
+    ...mapState(['city'])
   },
   methods: {
     getHomeInfo() {
-      axios.get("../../static/mock/index.json").then(response => {
-        this.ajaxData = response.data;
-      });
+      axios
+        .get('../../static/mock/index.json?city=' + this.city)
+        .then(response => {
+          this.ajaxData = response.data
+        })
     }
   },
   mounted() {
-    this.getHomeInfo();
+    this.getHomeInfo()
+    console.log('mounted')
+    this.lastCity = this.city
+  },
+  activated() {
+    if (this.lastCity != this.city) {
+      this.getHomeInfo()
+      this.lastCity = this.city
+    }
+    console.log('activated')
   }
-};
+}
 </script>
 <style>
 * {
